@@ -1,0 +1,330 @@
+:root {
+    --primary-color: #2b4cff;
+    --secondary-color: #f5f5f5;
+    --accent-color: #ffb800;
+    --text-color: #222;
+    --muted-text: #666;
+    --max-width: 1000px;
+    --border-radius: 10px;
+    --shadow-soft: 0 4px 12px rgba(0,0,0,0.08);
+    --font-main: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-main);
+    color: var(--text-color);
+    background-color: #fafafa;
+    line-height: 1.6;
+}
+
+/* ============================
+   Layout
+   ============================ */
+
+header {
+    background: white;
+    box-shadow: var(--shadow-soft);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.header-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    font-size: 1.1rem;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--muted-text);
+    padding: 0.3rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+main {
+    max-width: var(--max-width);
+    margin: 2rem auto;
+    padding: 0 1.5rem 3rem;
+}
+
+/* ============================
+   Reusable Components
+   ============================ */
+
+.section-hero {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.hero-text h1 {
+    font-size: 2.1rem;
+    margin-top: 0;
+}
+
+.hero-text p {
+    color: var(--muted-text);
+}
+
+.hero-tags {
+    margin-top: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background: var(--secondary-color);
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    color: var(--muted-text);
+}
+
+.hero-photo img {
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: var(--shadow-soft);
+    object-fit: cover;
+}
+
+.btn-primary,
+.btn-secondary {
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.5rem 1.1rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+    margin-top: 1rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    filter: brightness(1.1);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid var(--muted-text);
+    color: var(--muted-text);
+}
+
+.section {
+    margin-top: 2.5rem;
+}
+
+.section h2 {
+    margin-top: 0;
+}
+
+/* Cards / grids */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: white;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-soft);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+}
+
+/* Resume */
+
+.resume-section {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-soft);
+}
+
+.resume-columns {
+    display: grid;
+    grid-template-columns: 1.1fr 1.3fr;
+    gap: 1.5rem;
+}
+
+/* Contact */
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1.1fr;
+    gap: 1.5rem;
+}
+
+form {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-soft);
+}
+
+.form-group {
+    margin-bottom: 0.9rem;
+}
+
+label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+    font-size: 0.95rem;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.map-container {
+    background: white;
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-soft);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 260px;
+    border: 0;
+}
+
+/* Process / Accessibility */
+
+.callout {
+    background: #fff6da;
+    border-left: 4px solid var(--accent-color);
+    padding: 0.75rem 1rem;
+    border-radius: var(--border-radius);
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+
+.process-section {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 1.5rem;
+}
+
+.process-section h3 {
+    margin-top: 0;
+}
+
+ul {
+    padding-left: 1.1rem;
+}
+
+/* Footer */
+
+footer {
+    border-top: 1px solid #e1e1e1;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--muted-text);
+}
+
+/* Responsive tweak */
+
+@media (max-width: 768px) {
+    .section-hero,
+    .resume-columns,
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .header-inner {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+    }
+}
+
+
+
+.process-wireframes img {
+    width: 380px;     
+    height: auto;
+    border-radius: 30px;
+}
+
+
+
+
+.portfolio-page .card {
+    width: 360px;        
+}
+
+.portfolio-page .card img {
+    width: 100%;         
+    height: auto;         
+    border-radius: 12px;  
+}
+
+
+
+
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 2rem;  
+   align-items: start;
+}
